@@ -1,29 +1,29 @@
-package statisticker.statchecker;
+package statisticker;
 
 import java.util.Collections;
 import java.util.List;
 
-import statisticker.alerter.IAlerter;
-
 public class StatsChecker {
-	public float maxThreshold;
-	public IAlerter iAlerter[];
+
+	float maxThreshold;
+	IAlerter[] alerters;
 
 	public StatsChecker(float maxThreshold, IAlerter[] alerters) {
 		this.maxThreshold = maxThreshold;
-		this.iAlerter = alerters;
+		this.alerters = alerters;
 	}
 
-	public void checkAndAlert(List<Float> numberList) {
-
-		if (!numberList.isEmpty() && !numberList.contains(Float.NaN)) {
-			Collections.sort(numberList);
-			if (maxThreshold < numberList.get(numberList.size() - 1)) {
-				for (IAlerter iAlerter : this.iAlerter) {
-					iAlerter.alert();
+	public void checkAndAlert(Float[] numbers) {
+		for (Float number : numbers) {
+			if (number > maxThreshold) {
+				for (IAlerter alerter : alerters) {
+					if (alerter instanceof EmailAlert) {
+						((EmailAlert) alerter).emailSent = true;
+					} else if (alerter instanceof LEDAlert) {
+						((LEDAlert) alerter).ledGlows = true;
+					}
 				}
 			}
-
 		}
 	}
 
