@@ -4,8 +4,8 @@ import java.util.List;
 
 public class Statistics 
 {
+	Stats stats = new Stats();
     public static Stats getStatistics(final List<Float> numbers) {
-	Stats stats = new Stats();    
     //implement the computation of statistics here
     if (numbers.isEmpty())
     {
@@ -22,8 +22,8 @@ public class Statistics
             for(Float i:numbers){
                 sumofnums+=i;
             }
-            s.setAverage((Float)sumofnums/listLength);
+            stats.setAverage((Float)sumofnums/listLength);
         }
-        return s;
+        return stats;
     }
 }
