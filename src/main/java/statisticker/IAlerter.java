@@ -1,4 +1,4 @@
-package statisticker.alerter;
+package statisticker;
 
 public interface IAlerter {
 
