@@ -17,7 +17,7 @@ public class StatisticsTest
         Float[] numbers = {1.5f, 8.9f, 3.2f, 4.5f};
         List<Float> numberList = Arrays.asList(numbers);
 
-        Statistics.Stats s = Statistics.getStatistics(numberList);
+        Stats s = Statistics.getStatistics(numberList);
 
         float epsilon = 0.001f;
         assertEquals(s.getAverage(), 4.525f, epsilon);
@@ -29,10 +29,10 @@ public class StatisticsTest
     {
         List<Float> emptyList = new ArrayList<Float>();
 
-       Statistics.Stats s = Statistics.getStatistics(emptyList);
-        assertEquals(true, Float.isNaN(s.getAverage()));
-		assertEquals(true, Float.isNaN(s.getMin()));
-		assertEquals(true, Float.isNaN(s.getMax()));
+      Stats s = Statistics.getStatistics(emptyList);
+       assertEquals(true, Float.isNaN(s.getAverage()));
+       assertEquals(true, Float.isNaN(s.getMin()));
+       assertEquals(true, Float.isNaN(s.getMax()));
     }
     @Test
     public void reportsAlertsIfMaxIsMoreThanThreshold()
