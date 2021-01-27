@@ -9,10 +9,4 @@ public class EmailAlert implements IAlerter {
 	}
 }
 
-package statisticker.alerter;
 
-public interface IAlerter {
-
-	public void alert();
-
-}
