@@ -4,8 +4,10 @@ import java.util.List;
 
 public class Statistics 
 {
-	Stats stats = new Stats();
+	
     public static Stats getStatistics(final List<Float> numbers) {
+	    
+Stats stats = new Stats();
     //implement the computation of statistics here
     if (numbers.isEmpty())
     {
