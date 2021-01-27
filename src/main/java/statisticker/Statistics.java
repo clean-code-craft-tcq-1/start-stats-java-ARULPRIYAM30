@@ -17,13 +17,17 @@ Stats stats = new Stats();
     }
 		else
         {
-			stats.setMin(Collections.min(numbers));
-			stats.setMax(Collections.max(numbers));
+	Collections.sort(numbers);
+      // setting the minimum number to Stats object
+      stats.setMin(numbers.get(0));
+      // setting the maximum number to Stats object
+      stats.setMax(numbers.get(numbers.size() - 1));
 			int listLength=numbers.size();
             Float sumofnums=0.0f;
             for(Float i:numbers){
                 sumofnums+=i;
             }
+	// setting the average number to Stats object
             stats.setAverage((Float)sumofnums/listLength);
         }
         return stats;
