@@ -1,12 +1,9 @@
-package statisticker.alerter;
+package statisticker;
 
 public class EmailAlert implements IAlerter {
-	public boolean emailSent = false;
 
-	@Override
-	public void alert() {
-		emailSent = true;
-	}
+	public boolean emailSent;
+
 }
 
 
