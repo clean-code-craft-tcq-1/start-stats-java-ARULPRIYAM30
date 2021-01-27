@@ -5,6 +5,7 @@ import java.util.List;
 public class Statistics 
 {
     public static Stats getStatistics(final List<Float> numbers) {
+	Stats stats = new Stats();    
     //implement the computation of statistics here
     if (numbers.isEmpty())
     {
