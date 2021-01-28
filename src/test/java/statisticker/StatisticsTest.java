@@ -2,7 +2,11 @@ package statisticker;
 
 import static org.junit.Assert.*;
 import jdk.nashorn.internal.AssertsEnabled;
-
+import statisticker.Statistics;
+import statisticker.Statistics.EmailAlert;
+import statisticker.Statistics.IAlerter;
+import statisticker.Statistics.LEDAlert;
+import statisticker.Statistics.*;
 import java.util.Arrays;
 import java.util.List;
 import java.util.ArrayList;
