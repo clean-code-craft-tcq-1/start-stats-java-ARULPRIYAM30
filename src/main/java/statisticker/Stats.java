@@ -35,5 +35,4 @@ public class Stats
   {
     this.max = max;
   }
-
 }
