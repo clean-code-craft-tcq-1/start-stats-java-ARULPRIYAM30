@@ -18,9 +18,13 @@ public class StatsChecker {
 			if (number > maxThreshold) {
 				for (IAlerter alerter : alerters) {
 					if (alerter instanceof EmailAlert) {
+						
 						((EmailAlert) alerter).emailSent = true;
+						
 					} else if (alerter instanceof LEDAlert) {
+						
 						((LEDAlert) alerter).ledGlows = true;
+						
 					}
 				}
 			}
