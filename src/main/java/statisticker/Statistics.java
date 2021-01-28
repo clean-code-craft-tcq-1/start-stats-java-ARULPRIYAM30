@@ -1,7 +1,7 @@
 package statisticker;
 import java.util.Collections;
 import java.util.List;
-
+import java.util.function.ToDoubleFunction;
 public class Statistics 
 {
 	
